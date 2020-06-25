@@ -1,12 +1,15 @@
 import React from 'react';
-import { SideBar } from '../sidebar';
+import { Menu } from '../menu';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { MainContainer } from './styles';
 
 const App = () => {
   return (
-    <Router>
-      <SideBar />
-    </Router>
+    <MainContainer>
+      <Router>
+        <Menu />
+      </Router>
+    </MainContainer>
   );
 };
 

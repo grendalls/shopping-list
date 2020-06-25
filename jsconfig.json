@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": ["./src/assets/"]
+    },
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": false,
+    "target": "es2017",
+    "jsx": "react"
+  },
+  "exclude": ["node_modules"]
+}

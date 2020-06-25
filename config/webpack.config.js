@@ -8,7 +8,12 @@ module.exports = (mode) => ({
     path: path.resolve(__dirname, '../build/'),
     filename: '[name].[hash].js',
   },
-  resolve: { extensions: ['.js', '.ts', '.tsx', '.jsx'] },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx', '.jsx'],
+    alias: {
+      '@assets': path.resolve(__dirname, '../src/assets/'),
+    },
+  },
   module: {
     rules: [
       { test: /\.tsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
@@ -18,6 +23,13 @@ module.exports = (mode) => ({
           { loader: MiniCssExtractPlugin.loader, options: { hmr: true } },
           { loader: 'css-loader', options: { sourceMap: true } },
         ],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'url-loader',
+        options: {
+          limit: 25000,
+        },
       },
     ],
   },

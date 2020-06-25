@@ -14,8 +14,12 @@
     "noUnusedParameters": true,
     "pretty": true,
     "module": "es6",
+    "esModuleInterop": true,
     "moduleResolution": "node",
-    "lib": ["DOM", "ES2015", "ES2016", "ES2017"]
+    "lib": ["DOM", "ES2015", "ES2016", "ES2017"],
+    "paths": {
+      "@assets/*": ["./src/assets/*"]
+    }
   },
   "include": ["../src/**/*", "globals.d.ts"]
 }
